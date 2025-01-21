@@ -1,9 +1,10 @@
 import React from 'react'
+import "./ListIcon.css"
 
 function ListIcon() {
   return (
-    <div>
-      
+    <div className='list-icon'>
+  
     </div>
   )
 }

@@ -1,11 +1,12 @@
 import React from 'react';
-import ListIcon from '../../components/ListIcon/ListIcon';
+import "./ToolsSection.css";
+import ListIconsContainer from '../../components/ListIconsContainer/ListIconsContainer';
 
 function ToolsSection() {
   return (
-    <div>
+    <div className='tools-section'>
       Hi !
-      <ListIcon></ListIcon>
+      <ListIconsContainer></ListIconsContainer>
     </div>
   )
 }
