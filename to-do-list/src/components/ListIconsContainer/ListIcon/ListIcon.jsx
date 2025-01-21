@@ -1,12 +1,17 @@
 import React from 'react'
 import "./ListIcon.css"
 
-function ListIcon() {
-  return (
-    <div className='list-icon'>
-  
-    </div>
-  )
+function ListIcon({uniqueKey, handleClick}) {
+
+
+    return (
+        <div 
+        className='list-icon'
+        onClick={() => {handleClick(uniqueKey)}}
+        >
+        
+        </div>
+    )
 }
 
 export default ListIcon
