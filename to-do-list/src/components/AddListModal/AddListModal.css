@@ -1,0 +1,35 @@
+.add-list-modal-section {
+    height: 100%;
+    width: 100vw;
+    top: 0px;
+    right: 0px;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0.589);
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    z-index: 998;
+}
+
+.add-list-modal-container {
+    height: 250px;
+    width: 80%;
+    border-radius: 10px;
+    border: solid 2px rgba(255, 255, 255, 0.139);
+    background-color: #262628;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.add-list-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-list-form * {
+    margin: 5px;
+}

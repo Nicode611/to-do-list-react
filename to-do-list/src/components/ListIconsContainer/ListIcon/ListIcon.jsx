@@ -1,7 +1,7 @@
 import React from 'react'
 import "./ListIcon.css"
 
-function ListIcon({uniqueKey, event}) {
+function ListIcon({uniqueKey, name, color, event}) {
 
 
     return (
@@ -9,7 +9,7 @@ function ListIcon({uniqueKey, event}) {
         className='list-icon'
         onClick={() => {event(uniqueKey)}}
         >
-        {uniqueKey}
+        {name} et key : {uniqueKey}
         </div>
     )
 }
