@@ -1,15 +1,15 @@
 import React from 'react'
 import "./ListIcon.css"
 
-function ListIcon({uniqueKey, handleClick}) {
+function ListIcon({uniqueKey, event}) {
 
 
     return (
         <div 
         className='list-icon'
-        onClick={() => {handleClick(uniqueKey)}}
+        onClick={() => {event(uniqueKey)}}
         >
-        
+        {uniqueKey}
         </div>
     )
 }

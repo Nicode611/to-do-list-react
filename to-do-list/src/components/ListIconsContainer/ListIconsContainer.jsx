@@ -1,35 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect, useRef } from 'react';
 import "./ListIconsContainer.css";
 import ListIcon from './ListIcon/ListIcon';
 
 function ListIconsContainer({ handleClick }) {
-    const [icons, setIcons] = useState([]); // État pour stocker les icônes
+    const [icons, setIcons] = useState([]); // State for list icons
+    const idCounter = useRef(0);
 
-    // Fonction pour ajouter une nouvelle icône
+    // Function to add a list
     const handleAddIcon = () => {
-        const newIconId = `icon-${icons.length + 1}`; // Génère un ID unique pour chaque icône
+        idCounter.current += 1
+        const newIconId = `icon-${idCounter.current}`;
         setIcons((prevIcons) => {
             const updatedIcons = [...prevIcons, newIconId];
-            handleClick(updatedIcons); // Appelle la fonction parent avec la liste mise à jour
-            return updatedIcons; // Met à jour l'état local
+            return updatedIcons; // Value of the new state
         });
     };
 
-    const dataForChilds = "Hi";
+    // Function to delete a list
+    let handleDelIcon = (choosedIconId) => {
+        setIcons((prevIcons) => {
+            let updatedIcons = prevIcons.filter(icon => icon !== choosedIconId);
+            console.log(icons);
+            return updatedIcons;
+        })
+    }
+    
+    useEffect(() => {
+        if (icons.length > 0) {
+            console.log(icons);
+        }
+    }, [icons])
 
     return (
-        <div className='list-icons-container'>
-            {/* Bouton pour ajouter une icône */}
-            <button onClick={handleAddIcon}>Ajouter un ListIcon</button>
-
-            {/* Rendu des ListIcons */}
-            {icons.map((iconId) => (
-                <ListIcon
-                    key={iconId} // Utilise un ID unique pour chaque élément
-                    uniqueKey={iconId}
-                    data={dataForChilds} // Passe les données nécessaires à ListIcon
-                />
-            ))}
+        <div className='lists-section'>
+            <div className='add-list-section'>
+                {/* Bouton pour ajouter une icône */}
+                <button onClick={handleAddIcon}>Ajouter un ListIcon</button>
+            </div>
+            <div className='list-icons-container'>
+                {/* Rendu des ListIcons */}
+                {icons.map((iconId) => (
+                    <ListIcon
+                        key={iconId} // Utilise un ID unique pour chaque élément
+                        uniqueKey={iconId}
+                        event={handleDelIcon} // Passe les données nécessaires à ListIcon
+                    />
+                ))}
+            </div>
         </div>
     );
 }
