@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BackPattern from "../../assets/images/BackPattern.webp";
 import "./ToolsSection.css";
 import ListIconsContainer from '../../components/ListIconsContainer/ListIconsContainer';
 import AddListModal from '../../components/AddListModal/AddListModal';
@@ -18,14 +19,14 @@ function ToolsSection() {
         setModal(!modal)
         console.log(modal);
     }
-    
+
 
     return (
         <div className='tools-section'>
             {/* Passer la liste au composant SearchBar */}
             {/* <SearchBar data={list}></SearchBar>  */}
 
-            <button onClick={openCloseModal}>Créer une liste</button>
+            <button className='create-list-button' onClick={openCloseModal}>Créer une liste</button>
 
             <AddListModal isOpen={modal} handleClick={openCloseModal} listInfo={stockListInfos}></AddListModal>
 

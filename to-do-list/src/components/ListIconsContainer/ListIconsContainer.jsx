@@ -32,7 +32,7 @@ function ListIconsContainer( {listInfos} ) {
         }
     }, [listInfos])
 
-    
+
     return (
         <div className='lists-section'>
             <div className='list-icons-container'>
@@ -48,7 +48,7 @@ function ListIconsContainer( {listInfos} ) {
                 ))}
             </div>
             <div>
-                <button onClick={() => console.log(lists)}>Afficher la liste</button>
+                <button className='show-list' onClick={() => console.log(lists)}>Afficher la liste</button>
             </div>
         </div>
     );
