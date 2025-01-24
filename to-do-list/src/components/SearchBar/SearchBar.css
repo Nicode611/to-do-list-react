@@ -2,17 +2,17 @@
     width: 80%;
     padding: 12px 15px;
     margin-bottom: 30px;
-    border-radius: 25px; /* Arrondi complet pour un style plus moderne */
+    border-radius: 25px; 
     border: 1px solid #ddd;
     background-color: rgba(180, 180, 180, 0.384);
     color: white;
-    font-size: 16px; /* Police un peu plus grande */
-    transition: all 0.3s ease; /* Transition fluide sur focus */
-    outline: none; /* Supprime la bordure bleue par défaut */
+    font-size: 16px; 
+    transition: all 0.3s ease; 
+    outline: none; 
 }
 
 .search-bar-input:focus {
-    border-color: #007BFF; /* Couleur de focus (bleu) */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Lueur bleue */
-    background-color: rgba(180, 180, 180, 0.59); /* Fond blanc pour bien contraster */
+    border-color: #08814a; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+    background-color: rgba(180, 180, 180, 0.59); 
 }

@@ -3,8 +3,6 @@ import "./ListContainer.css"
 
 function ListContainer() {
 
-    let task = "The task";
-
     return (
         <div className='list-container'>
             <ul className='task-container'>
