@@ -5,11 +5,36 @@
     background-color: rgb(18, 18, 18);
     width: 70%;
     padding: 0px 3% 0px 3%;
-    border-left: solid 5px white;
+    border-left: solid 3px white;
+}
+
+.task-tools-container {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.add-task-icon {
+    height: 30px;
+    width: 30px;
+    justify-self: end;
+    transition: transform 3s ease; /* Ajout d'une transition fluide */
+}
+
+.add-task-icon:hover {
+    cursor: pointer;
+    transform: rotate(90deg); /* Rotation de 90 degrés */
+}
+
+.list-title-container {
+    width: 100%;
 }
 
 .list-title {
     font-size: 2rem;
     color: white;
-    font-weight: 1100;
+    text-align: left;
+    margin: 0px 0px 10px 0px;
 }
+

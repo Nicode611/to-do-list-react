@@ -1,8 +1,9 @@
 .tools-section {
     width: 30%;
     max-width: 400px;
+    min-width: 350px;
     height: 100vh;
-    padding: 20px 3% 20px 3%;
+    padding: 20px 1% 20px 1%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +22,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(8px); 
+    filter: blur(5px); 
     z-index: -1; 
 }
 

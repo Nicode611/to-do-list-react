@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import BackPattern from "../../assets/images/BackPattern.webp";
 import "./ToolsSection.css";
 import ListIconsContainer from '../../components/ListIconsContainer/ListIconsContainer';
 import AddListModal from '../../components/AddListModal/AddListModal';

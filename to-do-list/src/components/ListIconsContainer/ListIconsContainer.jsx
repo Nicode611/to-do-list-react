@@ -47,9 +47,6 @@ function ListIconsContainer( {listInfos} ) {
                     />
                 ))}
             </div>
-            <div>
-                <button className='show-list' onClick={() => console.log(lists)}>Afficher la liste</button>
-            </div>
         </div>
     );
 }
