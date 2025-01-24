@@ -1,7 +1,25 @@
 .list-icon {
+    display: flex;
+    align-items: end;
     width: 90%;
     height: 80px;
     background-color: #535458;
+    border: solid 2px rgba(255, 255, 255, 0.139);
     border-radius: 8px;
     margin: 10px;
+    position: relative;
+}
+
+.list-icon span {
+    margin: 10px;
+    color: rgba(255, 255, 255, 0.763);
+}
+
+.list-color-dot {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50px;
 }

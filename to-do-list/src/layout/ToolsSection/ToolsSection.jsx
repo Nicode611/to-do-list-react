@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import "./ToolsSection.css";
 import ListIconsContainer from '../../components/ListIconsContainer/ListIconsContainer';
 import AddListModal from '../../components/AddListModal/AddListModal';
@@ -18,6 +18,7 @@ function ToolsSection() {
         setModal(!modal)
         console.log(modal);
     }
+    
 
     return (
         <div className='tools-section'>
@@ -30,9 +31,6 @@ function ToolsSection() {
 
             {/* Passer `selectList` à ListIconsContainer */}
             <ListIconsContainer listInfos={listInfos}></ListIconsContainer>
-
-            {/* Bouton pour afficher la liste */}
-            <button onClick={() => console.log("list")}>Afficher la liste</button>
         </div>
     );
 }

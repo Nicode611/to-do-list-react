@@ -5,11 +5,9 @@ function ListIcon({uniqueKey, name, color, event}) {
 
 
     return (
-        <div 
-        className='list-icon'
-        onClick={() => {event(uniqueKey)}}
-        >
-        {name} et key : {uniqueKey}
+        <div className='list-icon' onClick={() => {event(uniqueKey)}}>
+            <span>{name}</span>
+            <div className='list-color-dot' style={{background: `${color}`}}></div>
         </div>
     )
 }
