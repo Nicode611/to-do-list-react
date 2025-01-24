@@ -24,7 +24,7 @@ function ToolsSection() {
     return (
         <div className='tools-section'>
             {/* Passer la liste au composant SearchBar */}
-            {/* <SearchBar data={list}></SearchBar>  */}
+            <SearchBar data={listInfos}></SearchBar>  
 
             <button className='create-list-button' onClick={openCloseModal}>Créer une liste</button>
 

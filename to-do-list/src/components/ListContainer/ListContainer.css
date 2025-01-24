@@ -1,0 +1,64 @@
+.list-container {
+    width: 90%;
+}
+
+.task-container {
+    color: white;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.task-element {
+    border-bottom: solid 1px rgba(177, 177, 177, 0.494);
+    padding: 10px;
+}
+
+.task-state {
+    margin-right: 40px;
+}
+
+
+/* Masquer l'apparence native de la checkbox */
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* Style du conteneur de la checkbox */
+  .custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  /* Style du "span" qui remplacera la checkbox */
+  .custom-checkbox span {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #555;
+    border-radius: 4px; /* Pour un effet arrondi */
+    margin-right: 10px;
+    display: inline-block;
+    background-color: #fff;
+    position: relative;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  /* Style quand la checkbox est cochée */
+  .custom-checkbox input[type="checkbox"]:checked + span {
+    background-color: #4caf50;
+    border-color: #4caf50;
+  }
+  
+  /* Ajout d'une coche (optionnelle) */
+  .custom-checkbox input[type="checkbox"]:checked + span::after {
+    content: '';
+    width: 10px;
+    height: 5px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    display: block;
+  }
