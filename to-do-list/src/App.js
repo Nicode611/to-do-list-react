@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <ToolsSection></ToolsSection>
-      <ListSection></ListSection>
+      <ListSection selectedList={""}></ListSection>
     </div>
   );
 }

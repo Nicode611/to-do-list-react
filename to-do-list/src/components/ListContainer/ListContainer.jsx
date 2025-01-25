@@ -1,10 +1,18 @@
 import React from 'react'
+import { useState,useEffect } from 'react'
 import "./ListContainer.css"
 
-function ListContainer() {
+function ListContainer(addTask) {
+
+    let [list, setList] = useState([]);
+
+    let addTaskToList = () => {
+
+    }
+
 
     return (
-        <div className='list-container'>
+        <div className='list-container'> 
             <ul className='task-container'>
                 <li className='task-element'>
                     <label class="custom-checkbox">
