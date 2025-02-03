@@ -27,6 +27,7 @@ function ListIconsContainer() {
                         uniqueKey={list.id}
                         name={list.name}
                         color={list.color}
+                        selected={list.selected}
                         event={handleDelIcon} 
                     />
                 ))}

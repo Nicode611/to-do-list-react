@@ -45,13 +45,12 @@ function AddListModal({isOpen, handleClick, listInfo}) {
                             type="text"
                             onChange={(e) => setListName(e.target.value)}
                             value={listName}
+                            required
                         />
                     </label>
                     <label>
                         List color : 
-                        <select id="mon-select" name="options" onChange={(e) => setListColor(e.target.value)}
-                        value={listColor}
-                        >
+                        <select id="mon-select" name="options" onChange={(e) => setListColor(e.target.value)} value={listColor} required >
                             <option value="" disabled>Color </option>
                             <option value="#274bde">blue</option>
                             <option value="#59cd39">green</option>
