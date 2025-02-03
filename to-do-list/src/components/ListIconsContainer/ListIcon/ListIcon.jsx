@@ -3,7 +3,6 @@ import "./ListIcon.css"
 
 function ListIcon({uniqueKey, name, color, event}) {
 
-
     return (
         <div className='list-icon' >
             <div className='list-del-icon' onClick={() => {event(uniqueKey)}}>X</div>

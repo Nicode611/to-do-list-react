@@ -1,37 +1,21 @@
-import React, { useState,useEffect, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import "./ListIconsContainer.css";
 import ListIcon from './ListIcon/ListIcon';
 
-function ListIconsContainer( {listInfos} ) {
-    
-    const [lists, setLists] = useState([]); // State for lists
-    const idCounter = useRef(0); // Count for IDs
+import { delList } from '../../redux/slices/listsSlices';
 
-    // Function to add a list
-    const handleAddIcon = (listInfos) => {
-        let newList = {
-            key: idCounter.current += 1, 
-            name: listInfos[0], 
-            color: listInfos[1], 
-        }
-        setLists((prevLists) => [...prevLists, newList]);
-    };
+function ListIconsContainer() {
+
+    // State for the lists
+    let lists = useSelector(state => state.lists.value)
+    
+    let dispatch = useDispatch();
 
     // Function to delete a list
     const handleDelIcon = (key) => {
-        setLists((prevLists) => {
-            const updatedLists = prevLists.filter((list) => list.key !== key);
-            return updatedLists;
-        });
+        dispatch(delList(key))
+        console.log(key)
     };
-
-    // Callback function to add list when infos are received
-    useEffect(() => {
-        if (listInfos.length !== 0) {
-            handleAddIcon(listInfos)
-        }
-    }, [listInfos])
-
 
     return (
         <div className='lists-section'>
@@ -39,13 +23,14 @@ function ListIconsContainer( {listInfos} ) {
                 {/* Lists render */}
                 {lists.map((list) => (
                     <ListIcon
-                        key={list.key} // Unique ID for each elements
-                        uniqueKey={list.key}
+                        key={list.id}
+                        uniqueKey={list.id}
                         name={list.name}
                         color={list.color}
-                        event={handleDelIcon}
+                        event={handleDelIcon} 
                     />
                 ))}
+                <button onClick={() => {console.log(lists)}}>Voir la liste</button>
             </div>
         </div>
     );

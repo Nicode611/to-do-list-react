@@ -1,12 +1,12 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 import "./AddListModal.css"
+import { addList } from "../../redux/slices/listsSlices"
 
 function AddListModal({isOpen, handleClick, listInfo}) {
 
-    // State for the infos filled on the modal
-    const [listName, setListName] = useState('');
-    const [listColor, setListColor] = useState('');
+    let dispatch = useDispatch();
 
     // Display setting of the modal window
     let modalParam={
@@ -18,15 +18,20 @@ function AddListModal({isOpen, handleClick, listInfo}) {
         e.stopPropagation(); 
     };
 
+    // State for the infos filled on the modal
+    const [listName, setListName] = useState('');
+    const [listColor, setListColor] = useState('');
+
+
     // Event when submit the infos
     const handleSubmit = (e) => {
         e.preventDefault(); // Empêche le rechargement de la page
-        let newListInfos = [listName, listColor] 
-        listInfo(newListInfos); // Send the list infos to the parent
+        dispatch(addList({
+            name : listName,
+            color : listColor,
+            tasks : []
+        }))
         handleClick(); // Close modal
-
-        setListColor('');
-        setListName('');
     };
 
 

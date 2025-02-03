@@ -6,31 +6,23 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 
 function ToolsSection() {
 
-    // Infos de la liste crée
-    let [listInfos, setListInfos] = useState([]);
-    let stockListInfos = (newListInfos)=>{
-        setListInfos(newListInfos)
-    }
-
     // State for modal
     let [modal, setModal] = useState(false);
     let openCloseModal = () => {
         setModal(!modal)
-        console.log(modal);
     }
-
 
     return (
         <div className='tools-section'>
             {/* Passer la liste au composant SearchBar */}
-            <SearchBar data={listInfos}></SearchBar>  
+            {/* <SearchBar data={listInfos}></SearchBar>   */}
 
             <button className='create-list-button' onClick={openCloseModal}>Créer une liste</button>
 
-            <AddListModal isOpen={modal} handleClick={openCloseModal} listInfo={stockListInfos}></AddListModal>
+            <AddListModal isOpen={modal} handleClick={openCloseModal} ></AddListModal>
 
             {/* Passer `selectList` à ListIconsContainer */}
-            <ListIconsContainer listInfos={listInfos}></ListIconsContainer>
+            <ListIconsContainer></ListIconsContainer>
         </div>
     );
 }
