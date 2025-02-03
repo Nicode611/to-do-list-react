@@ -1,10 +1,12 @@
 import React from 'react'
-import { useState,useEffect } from 'react'
-import "./ListContainer.css"
+import { useSelector } from 'react-redux';
+import "./TasksContainer.css"
 
 function ListContainer(addTask) {
 
-    let [list, setList] = useState([]);
+     // State for the selected list
+    let list = useSelector(state => state.lists.value.find(list => list.selected === true)) || { tasks: [] };
+    
 
     let addTaskToList = () => {
 
@@ -14,20 +16,16 @@ function ListContainer(addTask) {
     return (
         <div className='list-container'> 
             <ul className='task-container'>
-                <li className='task-element'>
+            {list.tasks.map((task) => (
+                    <li className='task-element'>
                     <label class="custom-checkbox">
                         <input type="checkbox" />
                         <span class="circle"></span>
                         <input type="text" class="checkbox-label" />
                     </label>
                 </li>
-                <li className='task-element'>
-                    <label class="custom-checkbox">
-                        <input type="checkbox" />
-                        <span class="circle"></span>
-                        <input type="text" class="checkbox-label" />
-                    </label>
-                </li>
+                ))}
+                
                 <li className='add-task'>
                 </li>
             </ul>

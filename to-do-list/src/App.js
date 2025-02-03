@@ -1,6 +1,6 @@
 import './App.css';
 import ToolsSection from './layout/ToolsSection/ToolsSection';
-import ListSection from './layout/ListSection/ListSection';
+import ListSection from './layout/TasksSection/TasksSection';
 
 function App() {
 

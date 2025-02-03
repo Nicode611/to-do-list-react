@@ -8,9 +8,9 @@ const SearchBar = ({ data }) => {
     setSearchTerm(event.target.value.toLowerCase());
   };
 
-  const filteredData = data.filter((item) =>
+  /* const filteredData = data.filter((item) =>
     item.toLowerCase().includes(searchTerm)
-  );
+  ); */
 
   return (
       <input

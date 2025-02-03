@@ -34,8 +34,6 @@ export const listsSlice = createSlice({
 
                 // Basculer l'état sélectionné de la nouvelle liste
                 list.selected = !list.selected;
-            } else {
-                console.log(id)
             }
         }
         }

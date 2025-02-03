@@ -1,14 +1,16 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import PlusIcon from "../../assets/icons/plus-icon.png";
-import "./ListSection.css";
+import "./TasksSection.css";
 
-import ListContainer from '../../components/ListContainer/ListContainer';
+import ListContainer from '../../components/TasksContainer/TasksContainer';
 
-function ListSection(selectedList) {
+function ListSection() {
 
-    // State for selected List
-    let [list, setList] = useState([])
+    // State for the selected list
+    let list = useSelector(state => state.lists.value.find(list => list.selected === true)) || { name: "Aucune liste sélectionnée" };
+
 
     //State to add Task
     let [task, setTask] = useState(false)
@@ -24,7 +26,7 @@ function ListSection(selectedList) {
                 <img className='add-task-icon' src={PlusIcon} alt="" onClick={handleAddTask}/>
             </div>
             <div className='list-title-container'>
-                <h2 className='list-title'>Groceries list</h2>
+                <h2 className='list-title'>{list.name}</h2>
             </div>
             <ListContainer addTask={task}></ListContainer>
         </div>
