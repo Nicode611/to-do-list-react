@@ -34,7 +34,6 @@ function ListContainer(props) {
                         <input type="text" class="checkbox-label" required 
                         onKeyDown={(e) => {
                             if (e.key === "Enter" && e.target.value !== "") {
-                                console.log("fv");
                                 e.preventDefault();
                                 addTaskToList(list.id, e.target.value); 
                                 e.target.value = ""; 
