@@ -4,7 +4,7 @@ import { useState } from 'react';
 import PlusIcon from "../../assets/icons/plus-icon.png";
 import "./TasksSection.css";
 
-import ListContainer from '../../components/TasksContainer/TasksContainer';
+import TasksContainer from '../../components/TasksContainer/TasksContainer';
 
 function ListSection() {
 
@@ -16,7 +16,8 @@ function ListSection() {
     let [task, setTask] = useState(false)
 
     let handleAddTask = () => {
-        setTask(!task)
+        setTask(task = true)
+        console.log(task)
     }
 
 
@@ -28,7 +29,7 @@ function ListSection() {
             <div className='list-title-container'>
                 <h2 className='list-title'>{list.name}</h2>
             </div>
-            <ListContainer addTask={task}></ListContainer>
+            <TasksContainer addTaskOpened={task}></TasksContainer>
         </div>
     )
 }

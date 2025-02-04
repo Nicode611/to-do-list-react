@@ -35,8 +35,14 @@ export const listsSlice = createSlice({
                 // Basculer l'état sélectionné de la nouvelle liste
                 list.selected = !list.selected;
             }
+        },
+        addTask : (state, action) => {
+            const { id, task } = action.payload
+            const list = state.value.find(list => list.id === id);
+
+            list.tasks = [task, ...list.tasks];
         }
         }
 })
-export const { addList, delList, selectList } = listsSlice.actions
+export const { addList, delList, selectList, addTask } = listsSlice.actions
 export default listsSlice.reducer
