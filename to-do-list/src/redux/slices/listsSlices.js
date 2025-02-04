@@ -41,8 +41,15 @@ export const listsSlice = createSlice({
             const list = state.value.find(list => list.id === id);
 
             list.tasks = [task, ...list.tasks];
+        },
+        delTask : (state, action) => {
+            const { id, task } = action.payload
+            const list = state.value.find(list => list.id === id);
+            if (!list) return console.log(action.payload);
+
+            list.tasks = list.tasks.filter(item => item !== task);
         }
         }
 })
-export const { addList, delList, selectList, addTask } = listsSlice.actions
+export const { addList, delList, selectList, addTask, delTask } = listsSlice.actions
 export default listsSlice.reducer
