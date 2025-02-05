@@ -4,8 +4,10 @@
     align-items: center;
     background-color: rgb(18, 18, 18);
     width: 70%;
+    height: 100vh;
     padding: 0px 3% 0px 3%;
     border-left: solid 3px white;
+    overflow-y: auto;
 }
 
 .task-tools-container {

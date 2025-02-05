@@ -3,20 +3,26 @@ import { useDispatch } from 'react-redux'
 import { delTask } from '../../../redux/slices/listsSlices';
 import "./Task.css"
 
-function Task({ task, id}) {
+function Task({task, listId}) {
 
     let dispatch = useDispatch();
 
-    let deleteTask = (id, task) => {
-        dispatch(delTask(id, task))
-    }
+    let deleteTask = (e, listId, task) => {
+        e.stopPropagation();
+    
+        if (e.target.checked) { 
+            setTimeout(() => {
+                dispatch(delTask(listId, task));
+            }, 500);
+        }
+    };
 
   return (
     <li className='task-element'>
-        <label class="custom-checkbox">
-            <input type="checkbox" onClick={() => {deleteTask({id, task})}} />
-            <span class="circle"></span>
-            <input type="text" class="checkbox-label" value={task} />
+        <label className="custom-checkbox">
+            <input type="checkbox" onChange={(e) => {deleteTask(e, {listId, task})}} />
+            <span className="circle"></span>
+            <input type="text" className="checkbox-label" value={task} readOnly />
         </label>
     </li>
   )

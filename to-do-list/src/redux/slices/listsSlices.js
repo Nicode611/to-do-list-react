@@ -39,14 +39,13 @@ export const listsSlice = createSlice({
         addTask : (state, action) => {
             const { id, task } = action.payload
             const list = state.value.find(list => list.id === id);
-            console.log(task)
 
             list.tasks = [task, ...list.tasks];
         },
         delTask : (state, action) => {
-            const { id, task } = action.payload
-            const list = state.value.find(list => list.id === id);
-            if (!list) return console.log("pas de liste trouvée");
+            const { listId, task } = action.payload
+            const list = state.value.find(list => list.id === listId);
+            if (!list) return console.log("Aucune liste trouvée !");
 
             list.tasks = list.tasks.filter(item => item !== task);
         }
