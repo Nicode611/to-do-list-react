@@ -38,7 +38,6 @@ function ListContainer(props) {
                                 const inputValue = e.target.value;
                                 addTaskToList(list.id, inputValue);
                                 e.target.value = ""; 
-                                props.handleAddTask();
                             }
                         }} />
                     </label>

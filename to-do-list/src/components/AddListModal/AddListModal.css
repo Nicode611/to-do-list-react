@@ -5,7 +5,7 @@
     right: 0px;
     align-self: center;
     background-color: rgba(0, 0, 0, 0.589);
-    position: absolute;
+    position: fixed;
     justify-content: center;
     align-items: center;
     z-index: 998;
@@ -13,7 +13,8 @@
 
 .add-list-modal-container {
     height: 250px;
-    width: 80%;
+    width: 20%;
+    min-width: 300px;
     border-radius: 10px;
     border: solid 2px rgba(255, 255, 255, 0.139);
     background-color: #262628;

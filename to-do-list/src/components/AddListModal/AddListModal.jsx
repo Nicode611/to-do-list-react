@@ -25,7 +25,10 @@ function AddListModal({isOpen, handleClick, listInfo}) {
 
     // Event when submit the infos
     const handleSubmit = (e) => {
-        e.preventDefault(); // Empêche le rechargement de la page
+        e.preventDefault(); 
+
+
+
         dispatch(addList({
             name : listName,
             color : listColor,
@@ -43,7 +46,7 @@ function AddListModal({isOpen, handleClick, listInfo}) {
                         List name : 
                         <input
                             type="text"
-                            onChange={(e) => setListName(e.target.value)}
+                            onChange={(e) => setListName(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1))}
                             value={listName}
                             required
                         />
