@@ -1,4 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { nanoid } from '@reduxjs/toolkit';
+
+
 export const listsSlice = createSlice({
     name : 'lists',
     initialState : {
@@ -40,14 +43,23 @@ export const listsSlice = createSlice({
             const { id, task } = action.payload
             const list = state.value.find(list => list.id === id);
 
-            list.tasks = [task, ...list.tasks];
+            if (list) {
+                const newTask = {
+                    id: nanoid(), // Génère un ID unique
+                    content: task,
+                };
+                list.tasks = [newTask, ...list.tasks];
+            }
         },
         delTask : (state, action) => {
-            const { listId, task } = action.payload
+            const { listId, taskId } = action.payload
             const list = state.value.find(list => list.id === listId);
-            if (!list) return console.log("Aucune liste trouvée !");
+            if (!list) {
+                return console.log("Aucune liste trouvée !") 
+            } else {
+                list.tasks = list.tasks.filter(task => task.id !== taskId);
+            };
 
-            list.tasks = list.tasks.filter(item => item !== task);
         }
         }
 })

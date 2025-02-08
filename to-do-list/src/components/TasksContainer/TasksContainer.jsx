@@ -23,15 +23,15 @@ function ListContainer(props) {
         <div className='list-container'> 
             <ul className='task-container'>
                 {/* Loop inside the tasks of the selected list */}
-                {list.tasks.map((task, index) => (
-                    <Task key={task.id || index} task={task} listId={list.id} taskId={task.id}/>
+                {list.tasks.map((task) => (
+                    <Task key={task.id} task={task.content} listId={list.id} taskId={task.id}/>
                 ))}
 
                 {/* if add task button pressed, show the task to add */}
                 {addTaskOpened === true ? 
                 <li className='task-element'>
                     <label className="custom-checkbox">
-                    <input type="text" className="checkbox-label" required 
+                    <input type="text" className="checkbox-label" placeholder='Nouvelle tache' required 
                         onKeyDown={(e) => {
                             if (e.key === "Enter" && e.target.value !== "") {
 

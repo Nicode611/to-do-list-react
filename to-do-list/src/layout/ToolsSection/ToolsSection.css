@@ -19,11 +19,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../../assets/images/BackPattern.webp');
+    background-image: url('../../assets/images/BackPattern.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(5px); 
+    filter: blur(5px) saturate(30%);
     z-index: -1; 
 }
 

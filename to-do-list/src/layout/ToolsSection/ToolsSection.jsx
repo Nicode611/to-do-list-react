@@ -20,7 +20,7 @@ function ToolsSection() {
             {/* Passer la liste au composant SearchBar */}
             <SearchBar data={lists}></SearchBar>  
 
-            <button className='create-list-button' onClick={openCloseModal}>Créer une liste</button>
+            <button className='create-list-button' onClick={openCloseModal}>Create a list</button>
 
             <AddListModal isOpen={modal} handleClick={openCloseModal} ></AddListModal>
 
