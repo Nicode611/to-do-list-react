@@ -1,13 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import "./ListIconsContainer.css";
 import ListIcon from './ListIcon/ListIcon';
 
 import { delList } from '../../redux/slices/listsSlices';
 
-function ListIconsContainer() {
+function ListIconsContainer({data}) {
 
-    // State for the lists
-    let lists = useSelector(state => state.lists.value)
     
     let dispatch = useDispatch();
 
@@ -21,7 +19,7 @@ function ListIconsContainer() {
         <div className='lists-section'>
             <div className='list-icons-container'>
                 {/* Lists render */}
-                {lists.map((list) => (
+                {data.map((list) => (
                     <ListIcon
                         key={list.id}
                         uniqueKey={list.id}
@@ -31,7 +29,6 @@ function ListIconsContainer() {
                         event={handleDelIcon} 
                     />
                 ))}
-                <button onClick={() => {console.log(lists)}}>Voir la liste</button>
             </div>
         </div>
     );

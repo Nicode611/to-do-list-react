@@ -1,3 +1,12 @@
+.list-icon-section {
+    height: 95%;
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .search-bar-input {
     width: 80%;
     padding: 12px 15px;
@@ -12,7 +21,7 @@
 }
 
 .search-bar-input:focus {
-    border-color: #08814a; 
+    border-color: #a3bdb1; 
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
     background-color: rgba(180, 180, 180, 0.59); 
 }

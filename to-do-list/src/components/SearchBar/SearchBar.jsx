@@ -1,30 +1,33 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import "./SearchBar.css";
+import ListIconsContainer from "../ListIconsContainer/ListIconsContainer";
 
-const SearchBar = ({ data }) => {
+const SearchBar = () => {
+
+  let lists = useSelector(state => state.lists.value)
+
+
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value.toLowerCase());
   };
 
-  /* const filteredData = data.filter((item) =>
-    item.toLowerCase().includes(searchTerm)
-  ); */
+  const filteredData = lists.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
 
   return (
-      <input
-        className="search-bar-input"
-        type="text"
-        placeholder="Search..." value={searchTerm} onChange={handleSearch}
-      />
-      /* <ul style={{ marginTop: "10px", listStyle: "none", padding: 0 }}>
-        {filteredData.map((item, index) => (
-          <li key={index} style={{ padding: "5px 0", borderBottom: "1px solid #eee" }}>
-            {item}
-          </li>
-        ))}
-      </ul> */
+      <div className="list-icon-section">
+        <input
+          className="search-bar-input"
+          type="text"
+          placeholder="Search..." value={searchTerm} onChange={handleSearch}
+        />
+        <ListIconsContainer data={filteredData}></ListIconsContainer>
+      </div> 
   );
 };
 
