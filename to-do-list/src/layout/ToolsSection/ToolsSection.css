@@ -18,12 +18,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../../assets/images/BackPattern.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(5px) saturate(20%) brightness(50%) ;
-    z-index: -1; 
+    background-color: #1f1f1f;
+    z-index: -1;
 }
 
 .create-list-button {

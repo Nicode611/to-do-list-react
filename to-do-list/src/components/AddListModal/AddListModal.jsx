@@ -55,9 +55,9 @@ function AddListModal({isOpen, handleClick, listInfo}) {
                         List color : 
                         <select id="mon-select" name="options" onChange={(e) => setListColor(e.target.value)} value={listColor} required >
                             <option value="" disabled>Color </option>
-                            <option value="#274bde">blue</option>
-                            <option value="#59cd39">green</option>
-                            <option value="#d53636">red</option>
+                            <option value="#274bde">Blue</option>
+                            <option value="#59cd39">Green</option>
+                            <option value="#d53636">Red</option>
                         </select>
                     </label>
                     <button type="submit">Create</button>
