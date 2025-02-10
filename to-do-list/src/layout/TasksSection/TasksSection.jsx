@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import PlusIcon from "../../assets/icons/plus-icon.png";
 import noTaskImg from "../../assets/images/no-task-image-2.png"
-import createListImg from "../../assets/images/create-list.png"
 import "./TasksSection.css";
 import TasksContainer from '../../components/TasksContainer/TasksContainer';
 
@@ -36,7 +35,7 @@ function ListSection() {
             </div>
             : 
             <div className='no-tasks-section'>
-                <img alt='no-task-image' className='no-task-image' src={noTaskImg}/>
+                {/* <img alt='no-task-image' className='no-task-image' src={noTaskImg}/> */}
                 <span className='create-list-title'>Please select a list</span>
             </div>
             }

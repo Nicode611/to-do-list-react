@@ -28,7 +28,7 @@ function ListContainer(props) {
                 ))}
 
                 {/* if add task button pressed, show the task to add */}
-                {addTaskOpened === true ? 
+                {addTaskOpened === true || list.tasks.length === 0 ? 
                 <li className='task-element'>
                     <label className="custom-checkbox">
                     <input type="text" className="checkbox-label" placeholder='Nouvelle tache' required 

@@ -80,12 +80,11 @@
 }
 
 .create-list-title {
-    position: absolute;
-    top: 150px;
     text-align: center;
     font-size: 4rem;
-    color: #e96a57;
+    color: #ffffff;
     -webkit-text-stroke: 2px black;
+    text-shadow: 5px 5px 25px black;
     font-weight: bolder;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
